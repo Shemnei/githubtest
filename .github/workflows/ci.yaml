@@ -15,11 +15,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Undefined var
+        continue_on_error: true
         run: |
           set -eoux pipefail
 
           echo "${UNDEFINED}"
       - name: Piping fail
+        continue_on_error: true
         run: |
           set -eoux pipefail
 
@@ -30,8 +32,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Undefined var
+        continue_on_error: true
         run: |
           echo "${UNDEFINED}"
       - name: Piping fail
+        continue_on_error: true
         run: |
           echo "Oh no i am piping an the next fails" | exit 1 | echo "Will i make it here?"
