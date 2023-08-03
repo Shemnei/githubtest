@@ -1,0 +1,29 @@
+on: push
+
+name: Test
+
+jobs:
+  print-opts:
+    name: Print options
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print options
+        run: printf %s\\n "$-"
+
+  test-opts:
+    name: Test with options
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print options
+        run: |
+          set -eoux pipefail
+
+          echo "${UNDEFINED}"
+
+  test-noopts:
+    name: Test without options
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print options
+        run: |
+          echo "${UNDEFINED}"
