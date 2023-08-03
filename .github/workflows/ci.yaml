@@ -20,6 +20,8 @@ jobs:
 
           echo "${UNDEFINED}"
 
+          echo "Oh no i am piping an the next fails" | exit 1 | echo "Will i make it here?"
+
   test-noopts:
     name: Test without options
     runs-on: ubuntu-latest
@@ -27,3 +29,5 @@ jobs:
       - name: Print options
         run: |
           echo "${UNDEFINED}"
+
+          echo "Oh no i am piping an the next fails" | exit 1 | echo "Will i make it here?"
