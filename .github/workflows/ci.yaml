@@ -14,11 +14,14 @@ jobs:
     name: Test with options
     runs-on: ubuntu-latest
     steps:
-      - name: Print options
+      - name: Undefined var
         run: |
           set -eoux pipefail
 
           echo "${UNDEFINED}"
+      - name: Piping fail
+        run: |
+          set -eoux pipefail
 
           echo "Oh no i am piping an the next fails" | exit 1 | echo "Will i make it here?"
 
@@ -26,8 +29,9 @@ jobs:
     name: Test without options
     runs-on: ubuntu-latest
     steps:
-      - name: Print options
+      - name: Undefined var
         run: |
           echo "${UNDEFINED}"
-
+      - name: Piping fail
+        run: |
           echo "Oh no i am piping an the next fails" | exit 1 | echo "Will i make it here?"
