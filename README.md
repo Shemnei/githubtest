@@ -1,3 +1,4 @@
 # Test
 
-This is a long text whicch might have some spelling mistackes :)
+speling might be somewat wrong but i have a spelchecker for that :)
+

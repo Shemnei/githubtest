@@ -24,3 +24,4 @@ jobs:
           level: warning
           files:
             README.md
+          extend_identifiers: test
