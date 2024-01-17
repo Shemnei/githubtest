@@ -22,6 +22,7 @@ jobs:
         with:
           reporter: ${{ steps.reporter.outputs.value }}
           level: warning
-          files:
+          files: |
             README.md
+            src/main.rs
           extend_identifiers: test
