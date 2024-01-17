@@ -25,4 +25,6 @@ jobs:
           files: |
             README.md
             src/main.rs
+          exclude: |
+            *.rs
           extend_identifiers: test
