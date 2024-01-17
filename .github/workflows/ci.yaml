@@ -29,3 +29,4 @@ jobs:
             *.rs
           extend_identifiers: test
           isolated: true
+          config: .github/asdf.txt
