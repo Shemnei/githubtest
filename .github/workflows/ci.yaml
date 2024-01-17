@@ -28,3 +28,4 @@ jobs:
           exclude: |
             *.rs
           extend_identifiers: test
+          implicit: true
