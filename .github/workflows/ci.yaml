@@ -24,3 +24,9 @@ jobs:
           extend_identifiers: test
           isolated: true
           config: .github/asdf.txt
+
+  test:
+    name: test
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Hello"
