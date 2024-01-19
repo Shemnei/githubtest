@@ -1,4 +1,4 @@
-name: reviewdog
+name: CI 
 on:
   push:
     branches:
@@ -7,18 +7,26 @@ on:
 
 jobs:
   typos:
-    name: runner / typos
+    name: typos
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: haya14busa/action-cond@v1
-        id: reporter
-        with:
-          cond: ${{ github.event_name == 'pull_request' }}
-          if_true: "github-pr-check"
-          if_false: "github-check"
       - name: Run typos with reviewdog
-        uses: Shemnei/reviewdog-action-typos@v0.1.0
+        uses: Shemnei/reviewdog-action-typos@v0
         with:
           reporter: ${{ steps.reporter.outputs.value }}
           level: warning
+          files: |
+            README.md
+            src/main.rs
+          exclude: |
+            *.rs
+          extend_identifiers: test
+          isolated: true
+          config: .github/asdf.txt
+
+  test:
+    name: test
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Hello"
